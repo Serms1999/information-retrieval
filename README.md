@@ -1,4 +1,4 @@
-# Information Retrieval Assignment 2
+# Information Retrieval
 
 ## Authors
 - Sergio Marín Sánchez
