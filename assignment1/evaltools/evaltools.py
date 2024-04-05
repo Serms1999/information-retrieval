@@ -1,5 +1,30 @@
 import matplotlib.pyplot as plt
 import numpy as np
+from pandas import Series
+
+
+def generate_relevance_array(relevance_map: dict[set[str], set[str]], categories: Series, relevant_value: int = 1,
+                             non_relevant_value: int = -1) -> np.ndarray[list[int]]:
+    """
+    Generate an array of length `num_queries` containing a list of `relevant_value` for relevant documents and
+     `non_relevant_value` for non-relevant, for each query
+    :param relevance_map: a dictionary that contains the map between the queries and the categories that are relevant
+        for each query
+    :param categories: a pandas Series containing the actual categories of the documents
+    :return: a numpy array containing the relevances for each query
+    """
+
+    num_queries: int = len(relevance_map)
+    num_documents: int = len(categories)
+
+    relevances: list[list[int]] = []
+    for query in relevance_map:
+        query_relevances: list[int] = []
+        for document in categories:
+            query_relevances.append(relevant_value if document in relevance_map[query] else non_relevant_value)
+        relevances.append(query_relevances)
+
+    return np.array(relevances)
 
 
 def evaluate(method: str, queries: list[np.ndarray], relevances: list[np.ndarray]) -> None:
