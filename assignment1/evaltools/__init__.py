@@ -1,1 +1,1 @@
-from .evaltools import evaluate
+from .evaltools import evaluate, generate_relevance_array
