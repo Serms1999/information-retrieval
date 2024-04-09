@@ -1,0 +1,85 @@
+\documentclass[12pt]{article}
+\usepackage{newclude}
+\usepackage[utf8]{inputenc}
+\usepackage[acronym, toc]{glossaries}
+\usepackage{amsmath,amsthm}
+\usepackage{amssymb,amsfonts,latexsym,cancel}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{subfig}
+\usepackage[normalem]{ulem}
+\usepackage[lmargin=3cm,rmargin=3cm,top=2.5cm,bottom=2.5cm]{geometry}
+\usepackage{longtable}
+\usepackage{ragged2e}
+\usepackage{datetime}
+\usepackage{siunitx}
+\usepackage{tikz}
+\usetikzlibrary{shapes, positioning}
+\usepackage{parskip}
+\usepackage{fancyhdr}
+\usepackage{titling}
+\pagestyle{fancy}
+\setlength{\headheight}{15.71667pt}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+\usepackage[
+  backend=biber,
+  style=ieee,
+  url=false,
+  doi=true,
+  isbn=false
+]{biblatex}
+\addbibresource{bibliography.bib}
+
+\fancyfoot{}
+\renewcommand{\footrulewidth}{0.5pt}
+\fancyfoot[R]{\thepage}
+
+\title{  % Título de la práctica
+}
+\author{ Sergio Marín Sánchez % Nombre del autor
+}
+\newdate{date}{12}{4}{2024} % Fecha
+
+\begin{document}
+\begin{titlepage}
+    \centering
+    \phantom{a}
+    \vspace{2cm}
+    {\includegraphics[scale=0.9]{ESCUDO_UPM.pdf}\par}
+    \vspace{2cm}
+    {\bfseries\LARGE Universidad Politécnica de Madrid \par}
+    \vspace{0.75cm}
+    {\scshape\Large Escuela Técnica Superior de Ingenieros Informáticos \par}
+    \vspace{0.75cm}
+    {\scshape\Huge \thetitle \par}
+    \vfill
+    {\large Authors: \par}
+    {\large \theauthor \par } 
+    {\large Irune Monreal Iraceburu  \par }
+    {\large Ander Ros Ollo \par }
+    \vspace{0.2cm}
+    {\large Date: \displaydate{date} \par}
+\end{titlepage}
+
+\pagestyle{empty}
+\tableofcontents
+\clearpage
+\setcounter{page}{1}
+
+
+\nocite{*}
+
+\clearpage
+\pagestyle{empty}
+
+\printbibliography
+
+\end{document}
