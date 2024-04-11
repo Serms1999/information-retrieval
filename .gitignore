@@ -10,3 +10,7 @@ __pycache__/
 
 # Remove texpad files
 .texpadtmp/
+
+# Ignore pyenv
+.python-version
+
